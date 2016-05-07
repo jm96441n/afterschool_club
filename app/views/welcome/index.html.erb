@@ -47,11 +47,11 @@
                 <div class="col-lg-12">
                     <h1 class="page-header">Welcome!</h1>
                     <% #if current_user.category == 'student'%>
-                      <%= render partial: "student_home" %>
+                      <%= render partial: "student_home", locals: { favorites: @favorites, programs: @programs } %>
                     <% # elsif current_user.category == 'teacher' %>
 
                     <% # elsif current_user.category == 'parent' %>
-                    
+
                     <% #end %>
                 </div>
             </div>
