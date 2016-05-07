@@ -57,15 +57,13 @@ ActiveRecord::Schema.define(version: 20160507192009) do
   add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "first_name",     null: false
-    t.string   "last_name",      null: false
-    t.string   "user_name",      null: false
-    t.string   "ref_id",         null: false
-    t.string   "type"
+    t.string   "first_name",      null: false
+    t.string   "password_digest"
+    t.string   "last_name",       null: false
     t.string   "email"
-    t.string   "hmhco_response"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "role"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
