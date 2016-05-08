@@ -295,3 +295,13 @@ students.each do |student|
 	l_name = student["last_name"]
  	User.create(first_name: f_name.capitalize, last_name: l_name.capitalize, email: f_name + l_name + "@example.com", password: "password", role: "student")
 end
+
+popular_programs = Program.all.sample(200)
+users = User.all
+
+popular_programs.each do |program|
+	(3 + rand(14)).times do
+		user = users.sample
+		user.programs << program unless user.programs.include?(program)
+	end
+end
