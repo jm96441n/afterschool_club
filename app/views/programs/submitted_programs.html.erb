@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
+            	<% if @programs.count > 0 %>
             	<% @programs.each do |program| %>
 	            	<div class="panel panel-primary">
 								   <div class="panel-heading">
@@ -11,10 +12,39 @@
 								       <p><%= program.description %></p>
 								   	</div>
 								    <div class="panel-footer">
-								        Panel Footer
+								        <% if current_user.role == 'teacher' %>
+        <button type="button" class="btn btn-success btn-circle">
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+        </button>
+        Approve
+        <button type="button" class="btn btn-success btn-circle">
+          <a href="#">
+            <i class="fa fa-link"></i>
+          </a>
+        </button>
+        Reject
+      <% else %>
+        <button type="button" class="btn btn-success btn-circle">
+          <a href="<%= 'http://' + program.website %>" target="_blank">
+            <i class="fa fa-link"></i> Vote for me
+          </a>
+        </button>
+      <% end %>
 								    </div>
 								  </div>
 								<% end %>
+							<% else %>
+								<div class="panel panel-primary">
+							   <div class="panel-heading">
+							        <p>No Pending Submissions</p>
+							   </div>
+							   <div class="panel-body">
+							       <p>There are no pending submissions at this time.</p>
+							   	</div>
+							  </div>
+							  <% end %>
             </div>
         </div>
     </div>

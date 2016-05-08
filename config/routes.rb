@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get '/programs/fund', to: 'programs#fund'
   get '/programs/submitted_programs', to: 'programs#submitted_programs'
+  get 'programs/submitted_programs/approved', to: 'programs#approved'
   get '/users/students', to: 'users#students'
 
   resources :users, only: [:new, :create, :show, :edit, :update]

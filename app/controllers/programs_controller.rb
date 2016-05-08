@@ -18,6 +18,11 @@ class ProgramsController < ApplicationController
 		@programs
 	end
 
+	def approved
+		@programs = Program.where("approval = ?", 'approved').where("existing = ?", false)
+		@programs
+	end
+
 	def fund
 		@programs = Program.all
 		@programs
