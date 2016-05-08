@@ -3,8 +3,15 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>Submit Your After School Program Idea!</h1>
-                <%= form_for @program, url: {action: 'create'} do |f| %>
-                    <%= f.label   %>
+                <%= form_for @program do |f| %>
+                	<div>
+                		<%= f.label "Description" %>
+                	</div>
+                	<div>
+                		<%= f.text_area :description %>
+                	</div>
+                		<%= f.submit "Submit Your Idea" %>
+                <% end %>
             </div>
         </div>
     </div>
