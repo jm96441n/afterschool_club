@@ -8,24 +8,36 @@
 
 <h3>Your Favorite Programs</h3>
 <div class="row">
-  <% programs[0..2].each do |program| %>
+  <% favorites[0..2].each do |program| %>
     <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
   <% end %>
 </div>
-<a href="#">See all</a>
+<% if favorites.length > 3 %>
+  <a href="#">See all</a>
+<% elsif favorites.length == 0 %>
+  <p>You don't have any favorites!</p>
+<% end %>
 
 <h3>Programs Your Classmates are Attending</h3>
 <div class="row">
-  <% programs[0..2].each do |program| %>
+  <% classmate_programs[0..2].each do |program| %>
     <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
   <% end %>
 </div>
-<a href="#">See all</a>
+<% if classmate_programs.length > 3 %>
+  <a href="#">See all</a>
+<% elsif favorites.length == 0 %>
+  <p>Your classmates haven't registered for any programs!</p>
+<% end %>
 
 <h3>Your Program Ideas</h3>
 <div class="row">
-  <% programs[0..2].each do |program| %>
+  <% user_programs[0..2].each do |program| %>
     <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
   <% end %>
 </div>
-<a href="#">See all</a>
+<% if user_programs.length > 3 %>
+  <a href="#">See all</a>
+<% elsif favorites.length == 0 %>
+  <p>You haven't submitted any ideas for new after school programs!</p>
+<% end %>
