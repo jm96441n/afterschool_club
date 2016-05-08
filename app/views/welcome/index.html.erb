@@ -1,18 +1,16 @@
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Welcome!</h1>
+                    <% #if current_user.category == 'student'%>
+                      <%= render partial: "student_home", locals: { favorites: @favorites, programs: @programs } %>
+                    <% # elsif current_user.category == 'teacher' %>
 
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header">Welcome!</h1>
-                <% #if current_user.role == 'student'%>
-                  <%= render partial: "parent_home" %>
-                <% # elsif current_user.role == 'teacher' %>
-
-                <% # elsif current_user.role == 'parent' %>
-                
-                <% #end %>
+                    <% # elsif current_user.category == 'parent' %>
+                      <%= render partial: "parent_home" %>
+                    <% #end %>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
