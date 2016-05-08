@@ -11,6 +11,11 @@
     <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
   <% end %>
 </div>
+<% if favorites.length > 3 %>
+  <a href="#" id="see-all-favorites">See all</a>
+<% elsif favorites.length == 0 %>
+  <p>Students have not favorited any programs!</p>
+<% end %>
 
 <h3>Programs Your Students have Suggested</h3>
 <div class="row">
@@ -18,3 +23,8 @@
       <%= render partial: "programs/submitted_program_box", locals: { favorites: favorites, program: program } %>
     <% end %>
 </div>
+<% if submitted_programs.length > 3 %>
+  <a href="#" id="see-all-favorites">See all</a>
+<% elsif submitted_programs.length == 0 %>
+  <p>Students have not suggested any programs!</p>
+<% end %>
