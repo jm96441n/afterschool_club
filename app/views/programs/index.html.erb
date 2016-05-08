@@ -7,12 +7,13 @@
 									<div class="panel-heading">
 									   <p class="modal-toggler" data-id=<%= program.id %>><%= program.organization %></p>
 									</div>
-				
+
 								   <div class="panel-body">
 								       <p><%= program.description %></p>
 								   	</div>
 								    <div class="panel-footer">
-								        Panel Footer
+								        <%= pluralize(program.donations.count, "donations") %>
+                                        <%= button_to '+1', donate_program_path(program), method: :post %>
 								    </div>
 								  </div>
 								<% end %>
@@ -31,7 +32,7 @@
          </div>
          <h4 class="modal-title" id="myModalLabel"></h4>
          <div class="modal-body">
-         	
+
          </div>
          <div class="modal-footer">
          		<button type="button" class="btn btn-default" id="join-btn">Join</button>
