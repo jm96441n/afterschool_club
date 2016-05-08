@@ -4,11 +4,14 @@ $(document).ready(function(){
       event.preventDefault();
       var id = $(this).attr('data-id');
      	$.get(id, function(data) {
-     	debugger;
-     // Handle the result
-     $('.modal-body').append(data);
-   });
-		$("#myModal").modal({show: true});
+        debugger;
+      $('.modal-body').append(data);
     });
+		  $("#myModal").modal({show: true});
+  });
+  
+  $("#join-btn").on("submit", function(event){
+
+  });
 });
 
