@@ -18,11 +18,4 @@ class User < ActiveRecord::Base
 		category == 'parent'
 	end
 
-	# Teacher stuff
-
-	def approve_idea
-		if current_user.is_teacher?
-			program.approved = true
-		end
-	end
 end
