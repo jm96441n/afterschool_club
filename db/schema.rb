@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20160507214425) do
     t.float    "long"
   end
 
-<<<<<<< ef126d1e7c802b7cf05c5a2db63337b39acd5a36
   create_table "user_programs", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "program_id"
@@ -49,8 +48,6 @@ ActiveRecord::Schema.define(version: 20160507214425) do
     t.datetime "updated_at", null: false
   end
 
-=======
->>>>>>> Seed teachers and students from hardcoded hmhco data
   create_table "users", force: :cascade do |t|
     t.string   "first_name",      null: false
     t.string   "password_digest"
