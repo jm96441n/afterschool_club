@@ -10,7 +10,7 @@
 <div id="wrapper">
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">After School Clubs</a>
+            <a class="navbar-brand" href="index.html">After School Club</a>
         </div>
 
         <ul class="nav navbar-top-links navbar-right">
@@ -24,7 +24,7 @@
                     <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                     </li>
                     <li class="divider"></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                     </li>
                 </ul>
             </li>
@@ -36,7 +36,7 @@
                     <%= render partial: "layouts/student_sidenav" %>
                 <% elsif current_user.role == 'teacher' %>
                     <%= render partial: "layouts/teacher_sidenav" %>
-                <% elsif current_user.role == 'parent' %>
+                <% else current_user.role == 'parent' %>
                     <%= render partial: "layouts/parent_sidenav" %>
                 <% end %>
             </div>

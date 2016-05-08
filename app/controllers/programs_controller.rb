@@ -18,6 +18,11 @@ class ProgramsController < ApplicationController
 		@programs
 	end
 
+	def show
+		@programs = Program.all
+		@programs
+	end
+
 	private
 
 	def program_params
