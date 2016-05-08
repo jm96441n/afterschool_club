@@ -29,18 +29,19 @@
                 </ul>
             </li>
         </ul>
-
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <% if current_user.role == 'student' %>
-                    <%= render partial: "layouts/student_sidenav" %>
-                <% elsif current_user.role == 'teacher' %>
-                    <%= render partial: "layouts/teacher_sidenav" %>
-                <% else current_user.role == 'parent' %>
-                    <%= render partial: "layouts/parent_sidenav" %>
-                <% end %>
+        <% if current_user %>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <% if current_user.role == 'student' %>
+                        <%= render partial: "layouts/student_sidenav" %>
+                    <% elsif current_user.role == 'teacher' %>
+                        <%= render partial: "layouts/teacher_sidenav" %>
+                    <% else current_user.role == 'parent' %>
+                        <%= render partial: "layouts/parent_sidenav" %>
+                    <% end %>
+                </div>
             </div>
-        </div>
+        <% end %>
     </nav>
 
 <%= yield %>
