@@ -27,15 +27,9 @@ ActiveRecord::Schema.define(version: 20160507214425) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "programs", force: :cascade do |t|
-<<<<<<< HEAD
-    t.boolean  "existing",    null: false
-    t.boolean  "approved",    null: false
-    t.string   "loc_name"
-=======
     t.boolean  "existing",     null: false
     t.boolean  "approved",     null: false
     t.string   "organization"
->>>>>>> master
     t.string   "address"
     t.string   "email"
     t.string   "phone"
