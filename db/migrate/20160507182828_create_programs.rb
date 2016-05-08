@@ -3,7 +3,7 @@ class CreatePrograms < ActiveRecord::Migration
     create_table :programs do |t|
       t.boolean :existing, null: false #whether program is an idea or an actual program
       t.boolean :approved, null: false
-      t.string :loc_name
+      t.string :organization
       t.string :address
       t.string :email
       t.string :phone
