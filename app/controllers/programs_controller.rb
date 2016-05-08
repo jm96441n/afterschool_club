@@ -22,6 +22,8 @@ class ProgramsController < ApplicationController
 	def show
 		@program = Program.find_by(id: params[:id])
 		@program
+		# render json: @program 
+		render layout: false
 	end
 
 	private

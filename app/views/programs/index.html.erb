@@ -5,10 +5,7 @@
             	<% @programs.each do |program| %>
 	            	<div class="panel panel-primary">
 									<div class="panel-heading">
-									   <a class="btn btn-lg btn-default show_prog" 
-										   data-toggle="modal" 
-										   data-target="#largeModal" 
-										   href='/progams/<%= "#{program.id}" %>'>Click to open Modal</a>
+									   <p class="modal-toggler" data-id=<%= program.id %>>Click to open modal</p>
 									</div>
 				
 								   <div class="panel-body">
@@ -22,4 +19,25 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="modal fade center" id="myModal" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+ <div class="vertical-alignment-helper">
+   <div class="modal-dialog vertical-align-center">
+     <div class="modal-dialog" role="document">
+       <div class="modal-content">
+         <div class="modal-header">
+
+         </div>
+         <h4 class="modal-title" id="myModalLabel"></h4>
+         <div class="modal-body">
+         	
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>
