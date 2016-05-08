@@ -1,0 +1,23 @@
+<div id="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+            	<% @programs.each do |program| %>
+	            	<div class="panel panel-primary">
+								   <div class="panel-heading">
+								        <%= program.address %>
+								   </div>
+								   <div class="panel-body">
+								        <% program.tags.each do |tag| %>
+								        		<p><%= tag.name %></p>
+								        <% end %>
+								   	</div>
+								    <div class="panel-footer">
+								        Panel Footer
+								    </div>
+								  </div>
+								<% end %>
+            </div>
+        </div>
+    </div>
+</div>

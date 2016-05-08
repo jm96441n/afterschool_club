@@ -34,7 +34,7 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <% #if current_user.role == 'student' %>
-                    <%= render partial: "parent_sidenav" %>
+                    <%= render partial: "layouts/parent_sidenav" %>
                 <% #elsif current_user.role == 'teacher' %>
 
                 <% #else current_user.role == 'parent' %>
