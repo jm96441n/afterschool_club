@@ -1,10 +1,22 @@
-<h3>Your Programs</h3>
+<h3>Trending Programs</h3>
 <div class="row">
   <% programs[0..2].each do |program| %>
     <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
   <% end %>
 </div>
 <a href="#" id="see-all-programs">See all</a>
+
+<h3>Your Programs</h3>
+<div class="row">
+  <% user_programs_attending[0..2].each do |program| %>
+    <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
+  <% end %>
+</div>
+<% if user_programs_attending.length > 3 %>
+  <a href="#" id="see-all-favorites">See all</a>
+<% elsif user_programs_attending.length == 0 %>
+  <p>You haven't said you are attending any programs!</p>
+<% end %>
 
 <h3>Your Favorite Programs</h3>
 <div class="row">
@@ -38,6 +50,6 @@
 </div>
 <% if user_programs.length > 3 %>
   <a href="#" id="see-all-user-programs">See all</a>
-<% elsif favorites.length == 0 %>
+<% elsif user_programs.length == 0 %>
   <p>You haven't submitted any ideas for new after school programs!</p>
 <% end %>
