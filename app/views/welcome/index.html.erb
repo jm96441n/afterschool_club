@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if current_user != nil %>
   <div id="page-wrapper">
     <div class="container-fluid">
       <div class="row">
@@ -7,9 +7,9 @@
             <% if current_user.role == 'student'%>
               <%= render partial: "student_home", locals: { favorites: @favorites, programs: @programs, classmate_programs: @classmate_programs, user_programs: @user_programs, user_programs_attending: @user_programs_attending } %>
             <% elsif current_user.role == 'teacher' %>
-              <%= render partial: "teacher_home", locals: { favorites: @favorites, programs: @programs, submitted_programs: @submitted_programs }%>
+              <%= render partial: "teacher_home", locals: { favorites: @favorites, programs: @programs, submitted_programs: @submitted_programs } %>
             <% elsif current_user.role == 'parent' %>
-              <%= render partial: "parent_home" %>
+              <%= render partial: "parent_home", locals: { favorites: @favorites, programs: @programs, submitted_programs: @submitted_programs } %>
             <% end %>
         </div>
       </div>
