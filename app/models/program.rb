@@ -1,7 +1,6 @@
 class Program < ActiveRecord::Base
 	before_create :set_initial_approval
 
-	has_many :programtags
 
 	validates :existing, presence: true
 	validates :address, presence: true
