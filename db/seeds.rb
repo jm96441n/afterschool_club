@@ -141,19 +141,29 @@ teachers.each do |teacher|
  	User.create(first_name: f_name.capitalize, last_name: l_name.capitalize, email: f_name + l_name + "@example.com", password: "password", role: "teacher")
 end
 
+popular_programs = Program.all.sample(200)
+
 students.each do |student|
 	f_name = student["first_name"]
 	l_name = student["last_name"]
- 	User.create(first_name: f_name.capitalize, last_name: l_name.capitalize, email: f_name + l_name + "@example.com", password: "password", role: "student")
-end
-
-popular_programs = Program.all.sample(200)
-users = User.all
-
-popular_programs.each do |program|
-
-	(3 + rand(14)).times do
-		user = users.sample
-		user.programs << program unless (user.role == "teacher" && user.programs.include?(program))
+ 	user = User.create(first_name: f_name.capitalize, last_name: l_name.capitalize, email: f_name + l_name + "@example.com", password: "password", role: "student")
+	2.times do
+		attender = Attender.create(user_id: user.id, program_id: popular_programs.sample.id)
+	end
+	2.times do
+		favorite = Favorite.create(user_id: user.id, program_id: popular_programs.sample.id)
 	end
 end
+
+users = User.all
+
+suggested_program = Program.create!(description: "I really want an after school program where I can practice computer science. I don't think we do enough of it in class and I can't find any programs in my area", existing: false, approval: 'pending')
+suggestion = UserProgram.create!(user_id: User.where(role: 'student').first.id, program_id: suggested_program.id)
+
+
+# popular_programs.each do |program|
+# 	(3 + rand(14)).times do
+# 		user = users.sample
+# 		user.programs << program unless (user.role == "teacher" && user.programs.include?(program))
+# 	end
+# end

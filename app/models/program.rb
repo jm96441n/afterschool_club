@@ -6,7 +6,6 @@ class Program < ActiveRecord::Base
 	has_many :attenders
 	has_many :user_attenders, through: :attenders, source: :user
 
-
 	def set_initial_approval
 		if self.existing == true
 			self.approval == 'approved'
