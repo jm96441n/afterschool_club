@@ -132,16 +132,17 @@ users = '{
 }'
 
 users = JSON.parse(users);
+teachers = users["staff"]
+students = users["students"]
 
-users["staff"].each do |teacher|
+teachers.each do |teacher|
 	f_name = teacher["first_name"]
 	l_name = teacher["last_name"]
  	User.create(first_name: f_name.capitalize, last_name: l_name.capitalize, email: f_name + l_name + "@example.com", password: "password", role: "teacher")
 end
 
-users["students"].each do |student|
+students.each do |student|
 	f_name = student["first_name"]
 	l_name = student["last_name"]
  	User.create(first_name: f_name.capitalize, last_name: l_name.capitalize, email: f_name + l_name + "@example.com", password: "password", role: "student")
->>>>>>> Seed users
 end
