@@ -15,7 +15,6 @@ class WelcomeController < ApplicationController
       @favorites = Program.where(existing:true).limit(20) # parent should only see programs their children have favorited
       @submitted_programs = Program.where(approval: 'pending')
     end
-
   end
 
 end
