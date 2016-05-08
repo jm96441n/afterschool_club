@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :user_programs
   has_many :programs, through: :user_programs
+  has_many :favorites
+  has_many :favorite_programs, through: :favorites, source: :programs, class_name: "Program", foreign_key: "program_id"
 
 	def is_teacher?
 		category == 'teacher'
