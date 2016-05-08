@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def new
     @user = User.new
+    if request.xhr?
+      render "_form", layout: false, locals: {user: @user}
+    else
+      render "new"
+    end
   end
 
   def create
@@ -16,7 +21,7 @@ class UsersController < ApplicationController
 
   end
 
-  private 
+  private
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :category, :password)
