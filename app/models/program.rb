@@ -16,13 +16,13 @@ class Program < ActiveRecord::Base
 
 	def approve_idea
 		if current_user.is_teacher?
-			self.approval == 'approved'
+			self.update(approval:'approved')
 		end
 	end
 
 	def deny_idea
 		if current_user.is_teacher?
-			self.approval == 'denied'
+			self.update(approval: 'denied')
 		end
 	end
 

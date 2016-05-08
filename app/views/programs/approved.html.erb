@@ -1,0 +1,26 @@
+<div id="page-wrapper">
+<div class="col-lg-4">
+  <div class="panel panel-primary">
+  <% if @programs.count > 0 %>
+	  <% @programs.each do |program|%>
+	    <div class="panel-heading">
+	    	Computer Programming
+	    </div>
+	    <div class="panel-body">
+	      <p><%= program.description %></p>
+	    </div>
+	    <div class="panel-footer">
+	    	This program has been approved.
+	    </div>
+    <% end %>
+  <% else %>
+  	<div class="panel-heading">
+	    	No Approved Submissions
+    </div>
+    <div class="panel-body">
+      <p>There are no approved submissions yet.</p>
+    </div>
+  <% end %>
+  </div>
+</div>
+</div>

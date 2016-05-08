@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @student = User.find(params[:id])
   end
 
   def logout
