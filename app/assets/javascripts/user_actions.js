@@ -19,14 +19,14 @@ $(document).ready(function(){
       });
     });
 
-    $(".unfavorite-program-btn-homepage").on("click", function(event){
+    $("#page-wrapper").on("click", ".unfavorite-program-btn-homepage", function(event){
         event.preventDefault();
         var $target = $(this);
-        debugger;
         var organization = $target.parent().parent().find(".panel-heading").text()
         var data = {organization: organization}
+        var fav_uri = "/favorites/" + $target.data().id
         $.ajax({
-          url: '/favorites/1',
+          url: fav_uri,
           method: 'delete',
           data: data,
         }).done(function(response){
