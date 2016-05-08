@@ -1,28 +1,34 @@
-== README
+== Inspiration
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+There is no single digital tool that aggregates information about after school programs. Students and parents must search the websites of local libraries and youth centers or hear about programs through word of mouth. Making this process easier and more streamlined will allow students to take control of the education that happens outside the classroom with their biggest allies - their parents and teachers - behind them.
 
-Things you may want to cover:
+== What it does
 
-* Ruby version
+After School Club is a platform connecting students, teachers, and parents with nearby after school programs. Millions of students and teachers can login via HMH to gain access to hundreds of after school program listings.
 
-* System dependencies
+Once on the platform, students can see after school programs in the area, "favorite" programs they like, mark themselves as attending a program, and see which programs their classmates are attending. If a student can't find a program they like, they can submit a program proposal for their teachers and parents.
 
-* Configuration
+In the teacher portal, teachers can see programs their students are attending and review program proposals students have submitted. If a proposal is serious, a teacher "approves" it for parents and other students to review.
 
-* Database creation
+In the parents' portal, parents can follow their child's activities on the platform. They can see what their child has favorited, what they have said they are attending, and what projects they have submitted. Parents can also see a list of projects that have been submitted by other students in their child's class. Parents can pledge to support a proposed program by making a small $5 donation via paypal. Teachers and other parents can gauge support for a proposed program by monitoring the number of people who have made a pledge.
 
-* Database initialization
+== How we built it
 
-* How to run the test suite
+We built a full Ruby on Rails web application with student and teacher data from the HMH identity API and after school program data from an open source City of Denver dataset. Other technologies used include JQuery, AJAX, postgreSQL, HTML, CSS, and Bootstrap.
 
-* Services (job queues, cache servers, search engines, etc.)
+== Challenges we ran into
 
-* Deployment instructions
+We had trouble finding the right datasets to pull from for after school program data and spent a long time cleaning data
 
-* ...
+== Accomplishments that we're proud of
 
+We were able to implement many of the features we originally planned and are excited about the potential use cases moving forward.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== What's next for TheAfterSchool.CLUB
+
+- Scrape more data on after school program from more websites
+- Implement HMH api to get real student and teacher data outside the sandbox environment
+- Test the platform with a control group of students
+- Link social media sharing
+- Add notifications and alerts for all user roles
+- Recommend after school programs for students based on academic interests and / or current school work
