@@ -19,10 +19,16 @@ class ProgramsController < ApplicationController
 		@programs
 	end
 
+	def show
+		@program = Program.find_by(id: params[:id])
+		@program
+	end
+
 	private
 
 	def program_params
 		params[:program].permit(:description).merge({existing: false, approved: "pending"})
 	end
+
 
 end

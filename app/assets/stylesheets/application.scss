@@ -4,3 +4,16 @@
 @import "afterschool.scss";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.panel-primary a {
+	color: white;
+}
+
+.panel-primary a:hover {
+	color: black;
+}
+
+.well {
+	margin-left: 20%;
+	margin-top: 10%;
+}

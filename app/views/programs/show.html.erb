@@ -1,0 +1,20 @@
+<div id="prog_page" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+			<h2>
+				Organization: <%= @program.organization %>
+			</h2>
+			<div>
+				<p>Location: <%= @program.address %></p>		
+			</div>
+			<div>
+				<p>Phone: <%= @program.phone %></p>
+			</div>
+			<div>
+				<p>Website: <a href='http://<%= "#{@program.website}" %>'><%= @program.website %></a></p>
+			</div>
+			<div>
+				<p>Description: <%= @program.description %></p>
+			</div>
+	</div>
+</div>
+	
