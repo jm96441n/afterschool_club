@@ -1,5 +1,5 @@
 class Program < ActiveRecord::Base
 
-	validates :existing, :address, :description, presence: true
+	validates :existing, presence: true
 
 end

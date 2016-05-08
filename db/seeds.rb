@@ -8,16 +8,16 @@ options = {
 CSV.foreach(File.dirname(__FILE__) + "/afterschool_programs.csv",options) do |row|
 	p = Hash.new
 	p[:existing] = true
-	p[:loc_name] = row[:loc_name]
-	p[:address] = row[:address]
+	p[:organization] = row[:organization]
+	p[:address] = row[:full_address]
 	p[:email] = row[:email]
 	p[:phone] = row[:phone]
 	p[:website] = row[:url]
 	p[:description] = row[:description]
-	p[:lat] = row[:point_x]
-	p[:long] = row[:point_y]
+	p[:lat] = row[:point_x].to_f
+	p[:long] = row[:point_y].to_f
 	p[:approved] = true
+	prog = Program.create!(p)
 
-	prog = Program.create(p)
-	puts prog.loc_name
+
 end
