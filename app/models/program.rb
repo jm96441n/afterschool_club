@@ -4,7 +4,7 @@ class Program < ActiveRecord::Base
 	has_many :user_programs
 	has_many :users, through: :user_programs
 
-	validates :existing, presence: true
+
 
 	def set_initial_approval
 		if self.existing == true
