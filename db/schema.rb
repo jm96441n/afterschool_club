@@ -27,13 +27,15 @@ ActiveRecord::Schema.define(version: 20160507183417) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "programs", force: :cascade do |t|
-    t.boolean  "existing",   null: false
-    t.string   "address",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "agency"
+    t.boolean  "existing",    null: false
+    t.string   "loc_name"
+    t.string   "address"
+    t.string   "email"
     t.string   "phone"
-    t.string   "boro"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.float    "lat"
     t.float    "long"
   end
