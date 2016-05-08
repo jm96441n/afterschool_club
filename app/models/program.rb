@@ -5,6 +5,7 @@ class Program < ActiveRecord::Base
 	has_many :users, through: :user_programs
 	has_many :attenders
 	has_many :user_attenders, through: :attenders, source: :user
+	has_many :donations
 
 	def set_initial_approval
 		if self.existing == true

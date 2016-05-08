@@ -29,6 +29,12 @@ class ProgramsController < ApplicationController
 		render layout: false
 	end
 
+	def donate
+  	@program = Program.find(params[:id])
+  	@program.donations.create
+  	redirect_to(programs_path)
+ end
+
 	private
 
 	def program_params
