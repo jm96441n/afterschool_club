@@ -300,8 +300,9 @@ popular_programs = Program.all.sample(200)
 users = User.all
 
 popular_programs.each do |program|
+
 	(3 + rand(14)).times do
 		user = users.sample
-		user.programs << program unless user.programs.include?(program)
+		user.programs << program unless (user.role == "teacher" && user.programs.include?(program))
 	end
 end
