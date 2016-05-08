@@ -15,11 +15,17 @@ class UsersController < ApplicationController
       redirect :root
     else
       flash[:alert] = "Please try again"
+      render :root
     end
   end
 
   def show
 
+  end
+
+  def logout
+    session.destroy
+    render :'welcome/index'
   end
 
   private
