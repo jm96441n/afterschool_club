@@ -16,6 +16,7 @@ CSV.foreach(File.dirname(__FILE__) + "/afterschool_programs.csv",options) do |ro
 	p[:description] = row[:description]
 	p[:lat] = row[:point_x]
 	p[:long] = row[:point_y]
+	p[:approved] = true
 
 	prog = Program.create(p)
 	puts prog.loc_name
