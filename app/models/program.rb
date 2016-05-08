@@ -2,7 +2,6 @@ class Program < ActiveRecord::Base
 	before_create :set_initial_approval
 
 	has_many :programtags
-	has_many :tags, through: :programtags
 
 	validates :existing, presence: true
 	validates :address, presence: true
@@ -14,4 +13,5 @@ class Program < ActiveRecord::Base
 			self.approved == false
 		end
 	end
+
 end
