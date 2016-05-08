@@ -1,8 +1,8 @@
 class WelcomeController < ApplicationController
 
   def index
-    # @programs = Program.where(existing: true).limit(20)
-    @programs = Program.where(existing: true).page(1).per(3)
+    @programs = Program.where(existing: true).limit(20)
+    # @programs = Program.where(existing: true).page(1).per(3)
     if current_user.role == 'student'
       @favorites = current_user.favorite_programs
       @user_programs = Program.where(existing: false, approval: 'approved').limit(20)
