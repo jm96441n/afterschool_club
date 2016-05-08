@@ -14,16 +14,12 @@ class ProgramsController < ApplicationController
 	end
 
 	def submitted_programs
-<<<<<<< HEAD
-		@programs = Program.where("approved = ?", "pending")
-=======
 		@programs = Program.where("approval = ?", 'pending')
 		@programs
 	end
 
 	def show
 		@programs = Program.all
->>>>>>> d97a08e5c09480a7202a62043b62a45b6b59d66a
 		@programs
 	end
 
@@ -37,15 +33,9 @@ class ProgramsController < ApplicationController
 	private
 
 	def program_params
-<<<<<<< HEAD
-		params[:program].permit(:description).merge({existing: false, approved: "pending"})
-	end
 
-
-end
-=======
 		params[:program].permit(:description).merge({existing: false, approval: 'approved' || :params[:approval]})
 	end
 
 end
->>>>>>> d97a08e5c09480a7202a62043b62a45b6b59d66a
+
