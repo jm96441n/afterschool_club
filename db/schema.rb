@@ -29,12 +29,14 @@ ActiveRecord::Schema.define(version: 20160507235236) do
   create_table "programs", force: :cascade do |t|
     t.boolean  "existing",   null: false
     t.boolean  "approved",   null: false
-    t.string   "address",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "agency"
+    t.string   "loc_name"
+    t.string   "address"
+    t.string   "email"
     t.string   "phone"
-    t.string   "boro"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.float    "lat"
     t.float    "long"
   end
