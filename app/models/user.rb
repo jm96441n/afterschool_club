@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   has_many :user_programs
   has_many :programs, through: :user_programs
+  has_many :favorites
+  has_many :favorite_programs, through: :favorites, source: :program
 
 	def is_teacher?
 		category == 'teacher'
