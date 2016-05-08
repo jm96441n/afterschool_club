@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507183417) do
+ActiveRecord::Schema.define(version: 20160507192009) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,13 +27,15 @@ ActiveRecord::Schema.define(version: 20160507183417) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "programs", force: :cascade do |t|
-    t.boolean  "existing",   null: false
-    t.string   "address",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "agency"
+    t.boolean  "existing",    null: false
+    t.string   "loc_name"
+    t.string   "address"
+    t.string   "email"
     t.string   "phone"
-    t.string   "boro"
+    t.string   "website"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.float    "lat"
     t.float    "long"
   end
@@ -55,5 +57,15 @@ ActiveRecord::Schema.define(version: 20160507183417) do
   end
 
   add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name",      null: false
+    t.string   "password_digest"
+    t.string   "last_name",       null: false
+    t.string   "email"
+    t.string   "role"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end
