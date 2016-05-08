@@ -12,10 +12,9 @@
   <% end %>
 </div>
 
-
 <h3>Programs Your Students have Suggested</h3>
 <div class="row">
     <% submitted_programs[0..3].each do |program| %>
-      <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
+      <%= render partial: "programs/submitted_program_box", locals: { favorites: favorites, program: program } %>
     <% end %>
 </div>

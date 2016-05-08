@@ -10,7 +10,8 @@ class WelcomeController < ApplicationController
         @user_programs = Program.where(existing: false, approval: 'approved').limit(20)
         @classmate_programs = Program.where(existing: true).limit(20)
       elsif current_user.role == 'teacher'
-        @favorites = Program.where(existing:true).limit(20) # teacher should only see programs their students have favorited
+        @favorites = Favorite.all.map{|favorite| Program.find(program_id: favorite.program_id)}
+        # @favorites = Program.where(existing:true).limit(20) 
         @submitted_programs = Program.where(approval: 'pending')
       elsif current_user.role == 'parent'
         @favorites = Program.where(existing:true).limit(20) # parent should only see programs their children have favorited

@@ -1,0 +1,30 @@
+<div class="col-lg-4">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <p><%= program.description %></p>
+    </div>
+    <div class="panel-footer">
+      <% if current_user.role == 'teacher' %>
+        <button type="button" class="btn btn-success btn-circle">
+          <a href="#">
+            <i class="fa fa-link"></i> Approve
+          </a>
+        </button>
+        <button type="button" class="btn btn-success btn-circle">
+          <a href="#">
+            <i class="fa fa-link"></i> Reject
+          </a>
+        </button>
+      <% else %>
+        <button type="button" class="btn btn-success btn-circle">
+          <a href="<%= 'http://' + program.website %>" target="_blank">
+            <i class="fa fa-link"></i> Vote for me
+          </a>
+        </button>
+      <% end %>
+    </div>
+
+  </div>
+</div>
