@@ -160,6 +160,10 @@ users = User.all
 suggested_program = Program.create!(description: "I really want an after school program where I can practice computer science. I don't think we do enough of it in class and I can't find any programs in my area", existing: false, approval: 'pending')
 suggestion = UserProgram.create!(user_id: User.where(role: 'student').first.id, program_id: suggested_program.id)
 
+approved_program = Program.create!(description: "I want a program where I can play my favorite sport, quidditch", existing: false, approval: 'pending')
+approved_suggestion = UserProgram.create!(user_id: User.where(role: 'student').last.id, program_id: approved_program.id)
+approved_program.update(approval: 'approved')
+
 
 # popular_programs.each do |program|
 # 	(3 + rand(14)).times do

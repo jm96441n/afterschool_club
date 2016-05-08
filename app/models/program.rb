@@ -9,9 +9,9 @@ class Program < ActiveRecord::Base
 
 	def set_initial_approval
 		if self.existing == true
-			self.approval == 'approved'
+			self.approval = 'approved'
 		else
-			self.approval == 'pending'
+			self.approval = 'pending'
 		end
 	end
 
