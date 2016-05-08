@@ -10,6 +10,11 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :programs
+  resources :programs do
+  member do
+      post 'donate'
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
   resources :user_programs, only: [:new, :create]
   resources :favorites, only: [:create, :destroy]
