@@ -1,10 +1,9 @@
 class WelcomeController < ApplicationController
 
   def index
-    current_user = 1
-    @programs = Program.all.limit(20)
-    @user_programs = Favorite.where(user_id: current_user)
-    @favorites = Favorite.where(user_id: current_user)
+    @programs = Program.where(existing: true).limit(20)
+    @favorites = current_user.favorite_programs
+    @user_programs = Program.where(existing: false, approval: 'approved').limit(20)
   end
 
 end

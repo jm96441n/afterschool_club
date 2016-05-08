@@ -2,7 +2,7 @@ class Favorite < ActiveRecord::Base
   validates :user, presence: true
   validates :program, presence: true
 
-  has_many :users
-  has_many :programs
-  
+  belongs_to :user
+  belongs_to :program
+
 end
