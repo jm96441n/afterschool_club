@@ -1,3 +1,5 @@
+== TheAfterSchool.CLUB
+
 == Inspiration
 
 There is no single digital tool that aggregates information about after school programs. Students and parents must search the websites of local libraries and youth centers or hear about programs through word of mouth. Making this process easier and more streamlined will allow students to take control of the education that happens outside the classroom with their biggest allies - their parents and teachers - behind them.
@@ -32,3 +34,8 @@ We were able to implement many of the features we originally planned and are exc
 - Link social media sharing
 - Add notifications and alerts for all user roles
 - Recommend after school programs for students based on academic interests and / or current school work
+
+== Links
+
+- theafterschool.club
+- devpost.com/software/theafterschool-club
