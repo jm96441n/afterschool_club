@@ -2,7 +2,7 @@ class CreatePrograms < ActiveRecord::Migration
   def change
     create_table :programs do |t|
       t.boolean :existing, null: false #whether program is an idea or an actual program
-      t.boolean :approved, null: false
+      t.string :approval, null: false
       t.string :organization
       t.string :address
       t.string :email
@@ -12,7 +12,8 @@ class CreatePrograms < ActiveRecord::Migration
       t.timestamps null: false
       t.float :lat
       t.float :long
-
+      t.string :name
+      t.text :description
     end
   end
 end
