@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show, :edit, :update]
   resources :programs
   resources :sessions, only: [:new, :create, :destroy]
+  resources :user_programs, only: [:new, :create]
 
 end

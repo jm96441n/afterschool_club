@@ -5,7 +5,7 @@
             	<% @programs.each do |program| %>
 	            	<div class="panel panel-primary">
 									<div class="panel-heading">
-									   <p class="modal-toggler" data-id=<%= program.id %>>Click to open modal</p>
+									   <p class="modal-toggler" data-id=<%= program.id %>><%= program.organization %></p>
 									</div>
 				
 								   <div class="panel-body">
@@ -34,7 +34,8 @@
          	
          </div>
          <div class="modal-footer">
-           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+         		<button type="button" class="btn btn-default" id="join-btn">Join</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
          </div>
        </div>
      </div>
