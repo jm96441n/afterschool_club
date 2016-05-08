@@ -9,14 +9,16 @@
       <% if current_user.role == 'teacher' %>
         <button type="button" class="btn btn-success btn-circle">
           <a href="#">
-            <i class="fa fa-link"></i> Approve
+            <i class="fa fa-link"></i>
           </a>
         </button>
+        Approve
         <button type="button" class="btn btn-success btn-circle">
           <a href="#">
-            <i class="fa fa-link"></i> Reject
+            <i class="fa fa-link"></i>
           </a>
         </button>
+        Reject
       <% else %>
         <button type="button" class="btn btn-success btn-circle">
           <a href="<%= 'http://' + program.website %>" target="_blank">
