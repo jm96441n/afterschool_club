@@ -7,7 +7,7 @@
             <% if current_user.role == 'student'%>
               <%= render partial: "student_home", locals: { favorites: @favorites, programs: @programs } %>
             <% elsif current_user.role == 'teacher' %>
-              <%= render partial: "teacher_home"%>
+              <%= render partial: "teacher_home", locals: { favorites: @favorites, programs: @programs }%>
             <% elsif current_user.role == 'parent' %>
               <%= render partial: "parent_home" %>
             <% end %>

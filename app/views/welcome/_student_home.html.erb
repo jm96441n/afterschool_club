@@ -9,7 +9,7 @@
 <h3>Your Favorite Programs</h3>
 <div class="row">
   <% programs[0..2].each do |program| %>
-    <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
+    <%= render partial: "programs/program_box", locals: { favorites: @favorites, program: program } %>
   <% end %>
 </div>
 <a href="#">See all</a>
