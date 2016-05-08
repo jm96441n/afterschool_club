@@ -1,5 +1,4 @@
 class ProgramsController < ApplicationController
-
 	def index
 		@programs = Program.where("existing = ?", true)
 		@programs
@@ -15,14 +14,19 @@ class ProgramsController < ApplicationController
 	end
 
 	def submitted_programs
-		@programs = Program.where("approved = ?", "pending")
+		@programs = Program.where("approval = ?", 'pending')
+		@programs
+	end
+
+	def show
+		@programs = Program.all
 		@programs
 	end
 
 	private
 
 	def program_params
-		params[:program].permit(:description).merge({existing: false, approved: "pending"})
+		params[:program].permit(:description).merge({existing: false, approval: 'approved' || :params[:approval]})
 	end
 
 end
