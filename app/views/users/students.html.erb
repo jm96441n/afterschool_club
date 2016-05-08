@@ -1,0 +1,11 @@
+<div id="page-wrapper">
+<h3>My Students</h3>
+<ul>
+<% @students.each do |student| %>
+	<li>
+		<a href="/users/<%= student.id %>"><%= "#{student.first_name} #{student.last_name}"%></a>
+	</li>
+<% end %>
+</ul>
+
+</div>
