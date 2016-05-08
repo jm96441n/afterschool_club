@@ -1,6 +1,6 @@
 class Program < ActiveRecord::Base
 	before_create :set_initial_approval
-
+	
 
 	validates :existing, presence: true
 	validates :address, presence: true
