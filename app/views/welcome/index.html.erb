@@ -1,3 +1,4 @@
+
 <% if current_user %>
   <div id="page-wrapper">
     <div class="container-fluid">
@@ -7,7 +8,7 @@
             <% #if current_user.category == 'student'%>
               <%= render partial: "student_home", locals: { favorites: @favorites, programs: @programs } %>
             <% # elsif current_user.category == 'teacher' %>
-
+              <% #render partial: "teacher_home"%>
             <% # elsif current_user.category == 'parent' %>
               <% #render partial: "parent_home" %>
             <% #end %>
