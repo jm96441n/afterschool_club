@@ -1,6 +1,8 @@
 class Program < ActiveRecord::Base
 	before_create :set_initial_approval
-	
+
+	has_many :user_programs
+	has_many :users, through: :user_programs
 
 	validates :existing, presence: true
 	validates :address, presence: true
