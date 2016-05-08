@@ -3,9 +3,9 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
-          <h1 class="page-header">Welcome!</h1>
+          <h1 class="page-header">Welcome, <%= current_user.first_name%>!</h1>
             <% if current_user.role == 'student'%>
-              <%= render partial: "student_home", locals: { favorites: @favorites, programs: @programs, classmate_programs: @classmate_programs, user_programs: @user_programs } %>
+              <%= render partial: "student_home", locals: { favorites: @favorites, programs: @programs, classmate_programs: @classmate_programs, user_programs: @user_programs, user_programs_attending: @user_programs_attending } %>
             <% elsif current_user.role == 'teacher' %>
               <%= render partial: "teacher_home", locals: { favorites: @favorites, programs: @programs, submitted_programs: @submitted_programs }%>
             <% elsif current_user.role == 'parent' %>
