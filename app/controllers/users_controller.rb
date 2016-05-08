@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def students
+    @students = User.where("role = ?", "student")
+    @students
+  end
+
   def show
 
   end

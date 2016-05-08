@@ -6,6 +6,10 @@
 </div>
 
 
-<h3>Programs Your Child has Suggested</h3>
+<h3>Programs Your Students have Suggested</h3>
+<div class="row">
+    <% Program.where("approval = ?", "pending").each do |program| %>
+    <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
 
-<h3>Programs Your Child is Interested in Attending</h3>
+    <% end %>
+</div>
