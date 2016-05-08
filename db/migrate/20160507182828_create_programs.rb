@@ -12,7 +12,8 @@ class CreatePrograms < ActiveRecord::Migration
       t.timestamps null: false
       t.float :lat
       t.float :long
-
+      t.string :name
+      t.text :description
     end
   end
 end

@@ -12,6 +12,8 @@ gem 'pry-rails'
 
 gem 'httparty'
 
+gem 'nokogiri'
+
 gem "font-awesome-rails"
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
