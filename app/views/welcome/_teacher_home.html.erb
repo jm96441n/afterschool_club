@@ -5,11 +5,17 @@
   <% end %>
 </div>
 
+<h3>Programs Your Students Have Favorited</h3>
+<div class="row">
+  <% favorites[0..2].each do |program| %>
+    <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
+  <% end %>
+</div>
+
 
 <h3>Programs Your Students have Suggested</h3>
 <div class="row">
-    <% Program.where("approval = ?", "pending").each do |program| %>
-    <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
-
+    <% submitted_programs[0..3].each do |program| %>
+      <%= render partial: "programs/program_box", locals: { favorites: favorites, program: program } %>
     <% end %>
 </div>
