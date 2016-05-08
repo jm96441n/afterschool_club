@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160507235236) do
+ActiveRecord::Schema.define(version: 20160507214425) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,8 +27,8 @@ ActiveRecord::Schema.define(version: 20160507235236) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id", using: :btree
 
   create_table "programs", force: :cascade do |t|
-    t.boolean  "existing",   null: false
-    t.boolean  "approved",   null: false
+    t.boolean  "existing",    null: false
+    t.boolean  "approved",    null: false
     t.string   "loc_name"
     t.string   "address"
     t.string   "email"
@@ -41,27 +41,11 @@ ActiveRecord::Schema.define(version: 20160507235236) do
     t.float    "long"
   end
 
-  create_table "programtags", force: :cascade do |t|
-    t.integer  "program_id", null: false
-    t.integer  "tag_id",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "programtags", ["program_id"], name: "index_programtags_on_program_id", using: :btree
-  add_index "programtags", ["tag_id"], name: "index_programtags_on_tag_id", using: :btree
-
-  create_table "tags", force: :cascade do |t|
-    t.string   "name",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "tags", ["name"], name: "index_tags_on_name", using: :btree
-
   create_table "user_programs", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "program_id"
+    t.integer  "user_id"
+    t.integer  "program_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
