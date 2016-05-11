@@ -1,5 +1,7 @@
 == TheAfterSchool.CLUB
 
+=== Built for Tech Crunch Disrupt NY 2016
+
 == Inspiration
 
 There is no single digital tool that aggregates information about after school programs. Students and parents must search the websites of local libraries and youth centers or hear about programs through word of mouth. Making this process easier and more streamlined will allow students to take control of the education that happens outside the classroom with their biggest allies - their parents and teachers - behind them.
